@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 28-abr-2018 13:41:34 by Hibernate Tools 5.3.0.Beta2 --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="empresa2" dynamic-insert="false" dynamic-update="false" mutable="true" name="classes.Clientes" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="clientes">
+        <id name="numero" type="java.lang.Integer">
+            <column name="numero"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="nif" optimistic-lock="true" type="string" unique="false">
+            <column length="12" name="nif"/>
+        </property>
+        <property generated="never" lazy="false" name="nombre" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="nombre"/>
+        </property>
+        <property generated="never" lazy="false" name="direccion" optimistic-lock="true" type="string" unique="false">
+            <column length="80" name="direccion"/>
+        </property>
+        <property generated="never" lazy="false" name="telefono" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="telefono"/>
+        </property>
+        <property generated="never" lazy="false" name="email" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="email"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="facturases" optimistic-lock="true" sort="unsorted" table="facturas">
+            <key on-delete="noaction">
+                <column name="cliente"/>
+            </key>
+            <one-to-many class="classes.Facturas" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>
