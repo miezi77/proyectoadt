@@ -120,6 +120,13 @@ public class Portada extends JFrame implements ActionListener{
 			this.dispose();
 			
 		}
+		else if(e.getSource().equals(btnOracle)){
+			opcion=3;
+			ListaFacturas frame = new ListaFacturas();
+			frame.setVisible(true);
+			this.dispose();
+			
+		}
 	}
 
 }

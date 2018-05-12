@@ -44,7 +44,6 @@ public class ClienteDetalle extends JDialog implements ActionListener{
 	private JTextField txtEmail;
 	JButton btnAadirCliente;	
 	private JButton btnModificarCliente;	
-	private JButton btnBorrarCliente;
 	private int id;
 	private JTextField txtNumero;
 	String nifOriginal;
@@ -199,13 +198,10 @@ public class ClienteDetalle extends JDialog implements ActionListener{
 		btnAadirCliente = new JButton("A\u00D1ADIR CLIENTE");
 		panel_4.add(btnAadirCliente);		
 		btnModificarCliente = new JButton("MODIFICAR CLIENTE");
-		panel_4.add(btnModificarCliente);		
-		btnBorrarCliente = new JButton("BORRAR CLIENTE");
-		panel_4.add(btnBorrarCliente);
+		panel_4.add(btnModificarCliente);
 		
 		btnAadirCliente.addActionListener(this);
 		btnModificarCliente.addActionListener(this);
-		btnBorrarCliente.addActionListener(this);
 		
 		txtNumero.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		txtNombre.setBorder(BorderFactory.createLineBorder(Color.BLACK));
@@ -230,7 +226,7 @@ public class ClienteDetalle extends JDialog implements ActionListener{
 			num=getLastId();
 			txtNumero.setText(String.valueOf(num+1));
 			btnModificarCliente.setEnabled(false);
-			btnBorrarCliente.setEnabled(false);
+			//btnBorrarCliente.setEnabled(false);
 		}
 		txtNumero.setEditable(false);	
 		
@@ -256,7 +252,7 @@ public class ClienteDetalle extends JDialog implements ActionListener{
 					num=getLastId();
 					txtNumero.setText(String.valueOf(num+1));
 					btnAadirCliente.setEnabled(true);
-					btnBorrarCliente.setEnabled(false);
+					//btnBorrarCliente.setEnabled(false);
 					btnModificarCliente.setEnabled(false);
 				}
 				//Comprobar que el nuevo nif introducido no existe en la bbdd
@@ -275,7 +271,7 @@ public class ClienteDetalle extends JDialog implements ActionListener{
 						num=getLastId();
 						txtNumero.setText(String.valueOf(num+1));
 						btnAadirCliente.setEnabled(true);
-						btnBorrarCliente.setEnabled(false);
+						//btnBorrarCliente.setEnabled(false);
 						btnModificarCliente.setEnabled(false);
 					}
 				}											
@@ -310,7 +306,7 @@ public class ClienteDetalle extends JDialog implements ActionListener{
 					resetearContornos();
 					num=getLastId();
 					txtNumero.setText(String.valueOf(num+1));
-					btnBorrarCliente.setEnabled(false);
+					//btnBorrarCliente.setEnabled(false);
 					btnModificarCliente.setEnabled(false);
 					}				
 			}			

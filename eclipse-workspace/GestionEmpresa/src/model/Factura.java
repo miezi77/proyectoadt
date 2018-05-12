@@ -9,7 +9,7 @@ public class Factura {
 	private String estado;
 	private String cliente;
 	private String concepto;
-	private float total;
+	private double total;//antes float
 	
 	
 		
@@ -17,7 +17,7 @@ public class Factura {
 		super();
 	}
 	
-	public Factura(String numero, String fechaEmision, String cliente, String concepto, float total, String estado) {
+	public Factura(String numero, String fechaEmision, String cliente, String concepto, double total, String estado) {
 		super();
 		this.numero = numero;
 		this.fechaEmision = fechaEmision;		
@@ -57,7 +57,7 @@ public class Factura {
 		this.concepto = concepto;
 	}
 
-	public float getTotal() {
+	public double getTotal() {
 		return total;
 	}
 
